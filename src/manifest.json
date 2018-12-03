@@ -1,0 +1,31 @@
+{
+	"manifest_version": 2,
+
+	"name": "Harvest Festival",
+	"short_name": "Harvest Festival",
+	"description": "Makes the Harvest time tracking web UI less annoying.",
+	"version": "0.0.1",
+
+	"icons": {
+		"16": "img/shitty-logo-16.png",
+		"48": "img/shitty-logo-48.png",
+		"128": "img/shitty-logo-128.png"
+	},
+
+	"browser_action": {
+		"default_icon": "img/shitty-logo-128.png",
+		"default_popup": "popup.html"
+	},
+
+	"permissions": [
+		"https://*.harvestapp.com/"
+	],
+
+	"content_scripts": [
+		{
+			"matches": ["https://*.harvestapp.com/*"],
+			"css": ["css/harvest-festival.css"],
+			"js": ["js/jquery-3.1.1.min.js", "js/harvest-festival.js"]
+		}
+	]
+}
